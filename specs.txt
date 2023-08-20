@@ -1,0 +1,74 @@
+
+This project is a  working space management system
+
+
+
+
+Model
+	
+	guest (user)
+	category > has many spaces
+	space  < belongs to category
+
+	extras  
+
+
+	bookings
+		space_id
+		user_id
+		extras
+		duration 
+		start_at
+		end_at
+		total_price
+
+
+
+	
+
+
+
+Features
+	
+	authentication system (user management)
+
+	wroking space management system (two main colors green, red)
+
+
+	-when the admin  login , the index page will show list of categories (title , ?image) clickable
+
+	-when the admin click on a category , he will redirected to list of spaces in that category
+
+	- each card of  (space)  should show space id ,a badge indicate wheather the space is available or not , ?name, ?image
+
+
+
+	
+
+
+<div class="user-form text-center">
+        <h2>User Details</h2>
+        <div class="container">
+            <form style="max-width: 400px; margin: 0 auto;">
+                <div class="form-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <div class="form-group" style="flex: 1; margin-right: 10px;">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-right: 10px;">
+                        <label for="guests">Guest Count:</label>
+                        <input type="number" class="form-control" id="guests" name="guests" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="start_date">Start Date:</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date" required>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for the next row -->
+                <div class="form-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <!-- ... -->
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
