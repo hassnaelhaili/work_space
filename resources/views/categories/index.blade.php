@@ -19,7 +19,8 @@
 
 
                             <div class="card-footer small">
-                                <a href="{{ route('spaces.index') }}" class="btn btn-secondary">View Spaces</a>
+                                <a href="{{ route('spaces.index', ['category' => $category]) }}"
+                                    class="btn btn-secondary">View Spaces</a>
                                 <a href="{{ route('categories.edit', $category->id) }}"
                                     class="btn btn-sm btn-primary">Edit</a>
                                 <form action="{{ route('categories.destroy', $category->id) }}" method="POST"

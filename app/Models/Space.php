@@ -9,7 +9,7 @@ class Space extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'category_id', /* ... other columns */];
+    protected $fillable = ['title', 'category_id', 'description', 'image'];
 
     public function category()
     {

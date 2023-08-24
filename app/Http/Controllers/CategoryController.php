@@ -70,6 +70,11 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        $spaces = $category->spaces;
+
+        foreach ($spaces as $space) {
+            $space->delete();
+        }
         $category->delete();
         return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
     }

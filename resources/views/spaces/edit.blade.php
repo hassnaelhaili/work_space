@@ -7,9 +7,18 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $space->name }}" required>
+                <label for="title">Name:</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ $space->title }}" required>
             </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="4" required>{{ $space->description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" class="form-control-file" id="image" name="image">
+            </div>
+
             <div class="form-group">
                 <label for="category_id">Category:</label>
                 <select class="form-control" id="category_id" name="category_id" required>

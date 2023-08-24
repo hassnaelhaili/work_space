@@ -8,9 +8,19 @@ use App\Models\Category;
 
 class SpaceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $spaces = Space::all();
+
+        $cates = $request->get('category');
+        if (!$cates) {
+            $spaces =  \App\Models\Space::all();
+        } else {
+
+            $category  = Category::find($cates);
+            $spaces = $category->spaces;
+        }
+
+
         return view('spaces.index', compact('spaces'));
     }
 
@@ -23,7 +33,8 @@ class SpaceController extends Controller
     public function store(Request $request)
     {
         Space::create([
-            'name' => $request->input('name'),
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
             'category_id' => $request->input('category_id')
         ]);
 
@@ -39,8 +50,15 @@ class SpaceController extends Controller
 
     public function update(Request $request, Space $space)
     {
+
+        $image = $space->image;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->move('image', 'public');
+        }
         $space->update([
-            'name' => $request->input('name'),
+            'image' => $image,
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
             'category_id' => $request->input('category_id')
         ]);
 

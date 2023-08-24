@@ -19,4 +19,3 @@ use App\Http\Controllers\GuestController;
 
 Route::resource('categories', CategoryController::class);
 Route::resource('spaces', SpaceController::class);
-Route::resource('guests', GuestController::class);
