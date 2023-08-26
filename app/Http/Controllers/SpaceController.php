@@ -32,7 +32,17 @@ class SpaceController extends Controller
 
     public function store(Request $request)
     {
+
+        $image = null;
+        if ($request->hasfile('image')) {
+
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $image = $file->move('images', $name);
+        }
+
         Space::create([
+            'image' => $image,
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'category_id' => $request->input('category_id')
@@ -51,10 +61,14 @@ class SpaceController extends Controller
     public function update(Request $request, Space $space)
     {
 
-        $image = $space->image;
+
+        $image = $space->image; //ila ma updead nach image yjib lina likant;
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->move('image', 'public');
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $image = $file->move('images', $name);
         }
+
         $space->update([
             'image' => $image,
             'title' => $request->input('title'),

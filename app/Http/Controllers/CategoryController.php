@@ -52,7 +52,7 @@ class CategoryController extends Controller
 
         $image = $category->image;
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->move('image', 'public');
+            $image = $request->file('image')->move('public');
         }
 
         $category->update([
