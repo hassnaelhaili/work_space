@@ -1,11 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+    <h2>Space Details</h2>
     <div class="container mt-4">
-        <h2>Space Details</h2>
+
         <div class="card" style="width: 18rem;">
-            <img src="{{ asset($space->image) }}" class="card-img-top" alt="Space Image">
+
             <div class="card-body">
+                <img src="{{ '/' . $space->image }}" class="card-img-top" alt="">
                 <h5 class="card-title">{{ $space->title }}</h5>
                 <p class="card-text">{{ $space->description }}</p>
                 <p class="card-text"><strong>Category:</strong> {{ $space->category->title }}</p>

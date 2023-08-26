@@ -9,7 +9,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <a href="{{ route('categories.show', [$category->id]) }}">
-                            <img src="{{ $category->image }}" class="card-img-top" alt="{{ $category->title }}">
+                            <img src="{{ '/' . $category->image }}" class="card-img-top" alt="{{ $category->title }}">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $category->title }}</h5>

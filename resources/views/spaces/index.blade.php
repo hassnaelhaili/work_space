@@ -9,11 +9,12 @@
                 <div class="col-md-3 mb-4">
                     <div class="card">
                         <a href="{{ route('spaces.show', [$space->id]) }}">
-                            <img src="{{ $space->image }}" class="card-img-top" alt="{{ $space->title }}">
+                            <img src="{{ '/' . $space->image }}" class="card-img-top" alt="{{ $space->title }}">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $space->id }}</h5>
                             <h5 class="card-title">{{ $space->name }}</h5>
+
                             <p class="card-text"><strong>Category:</strong> {{ $space->category->title }}</p>
                             <a href="{{ route('spaces.edit', $space->id) }}" class="btn btn-sm btn-primary">Edit</a>
                             <form action="{{ route('spaces.destroy', $space->id) }}" method="POST" class="d-inline">

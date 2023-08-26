@@ -21,16 +21,20 @@
                 <input type="text" class="form-control" id="title" name="title" required>
             </div>
             <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" class="form-control-file" id="image" name="image">
+            </div>
+            <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                <textarea class="form-control" id="description" name="description" rows="4"></textarea>
             </div>
             <div class="form-group">
                 <label for="price_per_hour">Price Per Hour:</label>
-                <input type="number" class="form-control" id="price_per_hour" name="price_per_hour" required>
+                <input type="number" class="form-control" id="price_per_hour" name="price_per_hour">
             </div>
             <div class="form-group">
                 <label for="price_per_day">Price Per Day:</label>
-                <input type="number" class="form-control" id="price_per_day" name="price_per_day" required>
+                <input type="number" class="form-control" id="price_per_day" name="price_per_day">
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
