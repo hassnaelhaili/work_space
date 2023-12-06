@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SpaceController;
-use App\Http\Controllers\GuestController;
+use App\Http\Controllers\BookingController;
 
 
 /*
@@ -19,3 +19,4 @@ use App\Http\Controllers\GuestController;
 
 Route::resource('categories', CategoryController::class);
 Route::resource('spaces', SpaceController::class);
+Route::resource('bookings', BookingController::class);
